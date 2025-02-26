@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+
+    <!-- 게시글 수정 링크 -->
+    <a href="/posts/{{ post.id }}/edit">Edit</a>
+
+    <!-- 게시글 삭제 폼 -->
+    <form action="/posts/{{ post.id }}" method="post">
+        <!-- Delete 메서드 사용을 위해 숨겨진 _method 필드 -->
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit">Delete</button>
+    </form>
+
+    <!-- 목록으로 돌아가기 링크 -->
+    <a href="/">Back to All Posts</a>
+</body>
+</html>
+
